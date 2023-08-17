@@ -1,0 +1,8 @@
+earth.gif:
+https://giphy.com/gifs/space-earth-spin-l0MYPsBLOYyFqSDte
+
+background.jpg:
+me
+
+logo.png:
+me

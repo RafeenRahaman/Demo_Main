@@ -1,0 +1,357 @@
+body {
+    background-color: rgb(13, 97, 153);
+}
+#nav {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-image: linear-gradient(rgb(109, 197, 226), rgb(13, 97, 153));
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+#div1 {
+    position: fixed;
+    width: 100%;
+    top: 80px;
+    background-image: linear-gradient(rgb(13, 97, 153), black);
+    padding: 10px;
+}
+#logo {
+    max-height: 63px;
+}
+.button {
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-image: linear-gradient(rgb(46, 188, 46), rgb(20, 146, 20));
+    border-radius: 10px 10px 10px 10px;
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+    border: outset rgb(10, 65, 25) 5px;
+    font-family:'Courier New', Courier, monospace;
+}
+.button:hover {
+    transition: 0.5s;
+    font-size: 30px;
+    font-style: italic;
+}
+.button:active {
+    border: inset rgb(10, 65, 25) 5px;
+}
+.button:not(:hover) {
+    transition: 0.5s;
+    font-size: 25px;
+    font-style: normal;
+}
+#welcome_box {
+    position: relative;
+    text-align: center;
+    color: white;
+    top: 83px;
+}
+#welcome_img {
+    width: 100%;
+}
+#welcome_txt {
+    position: absolute;
+    top: 100px;
+    left: 450px;
+    color: white;
+    font-size: 100px;
+    opacity: 0.8;
+}
+#div2 {
+    margin-top: 79px;
+}
+#div3 {
+    padding: 20px;
+    background-image: linear-gradient(black, rgb(13, 97, 153))
+}
+#div4 {
+    padding: 20px;
+    background-image: linear-gradient(rgb(13, 97, 153), rgb(109, 197, 226))
+}
+#news_title {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-family:'Courier New', Courier, monospace;
+    background-color: rgb(109, 197, 226);
+    font-size: 30px;
+    margin-bottom: 0px;
+}
+#news_desc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 0px;
+    background-color: rgb(109, 197, 226);
+    padding-top: 1px;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 20px;
+    color: white;
+}
+#NASA {
+    width: 300px;
+}
+#news_imgs {
+    display: flex;
+    background-color: rgb(109, 197, 226);
+    justify-content: space-evenly;
+    padding-top: 40px;
+}
+#NYT {
+    width: 180px;
+}
+#ECOSIA {
+    width: 315px;
+}
+.img_and_txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#div5 {
+    padding: 30px;
+    background-image: linear-gradient(rgb(109, 197, 226), rgb(13, 97, 153));
+}
+#quiz_ask {
+    padding-top: 10px;
+    background-color: rgb(13, 97, 153);
+    color: white;
+    font-size: 25px;
+    font-family:'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#quiz_box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#quiz_Btn {
+    width: 30%;
+    height: 60px;
+    background-image: linear-gradient(rgb(46, 188, 46), rgb(20, 146, 20));
+    border-radius: 10px 10px 10px 10px;
+    border: outset rgb(10, 65, 25) 5px;
+    color: white;
+    font-size: 25px;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+#quiz_Btn:hover {
+    transition: 0.5s;
+    font-size: 30px;
+    font-style: italic;
+    width: 32%
+}
+#quiz_Btn:not(:hover) {
+    transition: 0.5s;
+    font-size: 25px;
+    font-style: normal;
+    width: 30%
+}
+#quiz_Btn:active {
+    border: inset rgb(10, 65, 25) 5px;
+}
+.question {
+    color: white;
+    font-family:'Courier New', Courier, monospace;
+}
+.input {
+    border-radius: 10px 10px 10px 10px;
+}
+#div6 {
+    background-color:rgb(20, 81, 156);
+    padding:1px;
+    margin-top: 20px;
+}
+.quiz_disclaimer {
+    color: white;
+    font-family:'Courier New', Courier, monospace;
+}
+#quiz {
+    font-size: 20px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+#submit_quiz {
+    padding: 10px;
+    border-radius: 10px 10px 10px 10px;
+    color: rgb(200, 100, 0);
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 20px;
+    background-image: linear-gradient(yellow, orange);
+    border: outset rgb(205, 128, 4) 3px;
+}
+#submit_quiz:hover {
+    transition: 0.5s;
+    font-size: 25px;
+    font-style: italic;
+}
+#submit_quiz:not(:hover) {
+    transition: 0.5s;
+    font-size: 20px;
+}
+#submit_quiz:active {
+    border: inset rgb(205, 128, 4) 3px;
+}
+#after_quiz {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+#logged_in {
+    display: none;
+}
+#not_logged_in {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+#log_in_form {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding-top: 100px;
+    font-size: 50px;
+    color:white;
+    font-family:'Courier New', Courier, monospace;
+    font-weight:bold;
+}
+.log_input {
+    border-radius: 10px 10px 10px 10px;
+    width: 300px;
+    padding: 10px;
+}
+#log_in_btn {
+    padding: 10px;
+    margin-top: 10px;
+    border: outset darkgreen 3px;
+    background-color: rgb(0, 190, 0);
+    border-radius:10px 10px 10px 10px;
+    color: white;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 15px;
+    font-weight: bold;
+}
+#log_in_btn:hover {
+    transition: 0.5s;
+    padding: 15px;
+    font-style:italic;
+}
+#log_in_btn:not(:hover) {
+    transition: 0.5s;
+    padding: 10px;
+}
+#log_in_btn:active {
+    border: inset brown 3px;
+}
+#main_stat {
+    font-size: 25px;
+}
+#most_stat {
+    font-size: 30px;
+}
+#filler {
+    opacity: 0;
+}
+#retake { 
+    background-image: linear-gradient(yellow, orange);
+    border-radius: 25px 10px 25px 10px;
+    padding: 10px;
+    border: outset brown 4px;
+    color: brown;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 20px;
+}
+#retake:hover {
+    transition: 0.5s;
+    padding: 20px;
+}
+#retake:not(:hover) {
+    transition: 0.5s;
+    padding: 10px;
+}
+#retake:active {
+    border: inset brown 4px;
+}
+#blog_btn {
+    padding: 10px;
+    margin-top: 30px;
+    color: white;
+    background-image: linear-gradient(rgb(46, 188, 46), rgb(20, 146, 20));
+    font-weight: bold;
+}
+#div7 {
+    display: flex;
+    justify-content:center;
+
+}
+#reminder_title {
+    font-size: 25px;
+    font-family:'Courier New', Courier, monospace;
+    color:white;
+    font-weight:bold;
+    margin-left: 100px;
+}
+#reminders_box {
+    background-color: green;
+    padding: 50px;
+    overflow: auto;
+    max-height: 500px;
+    border: solid rgb(1, 44, 1) 10px;
+    border-radius: 5px 5px 5px 5px;
+}
+.reminder {
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 40px;
+}
+.reminder_button_complete {
+    background-color: rgb(18, 202, 18);
+    padding: 20px;
+    font-size: 25px;
+    color: white;
+    font-family:'Courier New', Courier, monospace;
+
+}
+.reminder_button_abandon {
+    background-color: red;
+    padding: 20px;
+    font-size: 25px;
+    color: white;
+    font-family:'Courier New', Courier, monospace;
+}
+#add_goal {
+    font-size: 40px;
+    color:brown;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    padding: 50px;
+    background-color: yellow;
+
+}
+#add_goal_box {
+    display: flex;
+    justify-content: center;
+}

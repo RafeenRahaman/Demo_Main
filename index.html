@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Main</title>
+    <link rel="icon" href="logo_transparent.png">
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script defer src="init-firebase.js"></script> 
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="logo.png">
+</head>
+<body>
+    <script src="sketch.js" defer></script>
+    <div id="not_logged_in">
+        <form id="log_in_form">
+            <label>Username</label>
+            <input placeholder="Enter your username" class="log_input" id="username_input">
+            <label>Password</label>
+            <input placeholder="Enter your password" class="log_input" id="password_input">
+        </form>
+        <button id="log_in_btn">Log In</button>
+    </div>
+    <div id="logged_in">
+        <div id="nav">
+            <img id="logo" src="logo.png">
+            <button id="homebtn" class="button">Home</button>
+            <button id="newsbtn" class="button">News</button>
+            <button id="susbtn" class="button">Sustainability</button>
+            <button class="button">Daily Reminders</button>
+            <button class="button">Log Out</button>
+        </div>
+        <div id="div1"></div>
+        <div id="welcome_box">
+            <div id="welcome_txt">Welcome back!</div>
+            <img id="welcome_img" src="logo_picture.png">
+        </div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <div id="div4"></div>
+        <div id="news_title">
+            <h1>News</h1>
+        </div>
+        <div id="news_desc">
+            <h2>Read up on the latest news in the environment:</h2>
+            <h4>Click on a logo to go to their news page</h2>
+        </div>
+        <div id="news_imgs">
+                <a href="https://climate.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2C+created_at+desc&search=&category=19%2C98" target="_blank"><img id="NASA" src="NASA.png"></a>
+                <a href="https://www.nytimes.com/topic/subject/sustainable-development" target="_blank"><img id='NYT' src="NYT.png"></a>
+                <a href="https://blog.ecosia.org" target="_blank"><img id="ECOSIA" src="ECOSIA.png"></a>
+        </div>
+        <div id="div5"></div>
+        <div id="quiz_box">
+            <h1 id="quiz_ask">Take a short quiz to calculate your carbon footprint & provide personalized feedback</h1>
+            <button id="quiz_Btn">Quiz</button>
+        </div>
+        <div id="quiz">
+            <div id="div6"></div>
+            <form>
+                <p class="quiz_disclaimer">Formula by Alexandra Shimo-Barry</p>
+                <p class="quiz_disclaimer">(For input fields, please enter numbers representing cost in $USD)</p>
+                <div class="question" id="electric_question">
+                    <label>What is your approximate
+                        <select id="electric_ratio">
+                            <option value="1/12">yearly</option>
+                            <option value="1">monthly</option>
+                            <option value="30">daily</option>
+                        </select>
+                         electric bill?</label>
+                        <input type="number" id="electric_bill" class="input">
+                </div>
+                <div class="question" id="gas_question">
+                    <label>What is your approximate
+                        <select id="gas_ratio">
+                            <option value="1/12">yearly</option>
+                            <option value="1">monthly</option>
+                            <option value="30">daily</option>
+                        </select>
+                         gas bill?</label>
+                        <input type="number" id="gas_bill" class="input">
+                </div>
+                <div class="question" id="oil_question">
+                    <label>What is your approximate
+                        <select id="oil_ratio">
+                            <option value="1/12">yearly</option>
+                            <option value="1">monthly</option>
+                            <option value="30">daily</option>
+                        </select>
+                         oil bill?</label>
+                        <input type="number" id="oil_bill" class="input">
+                </div>
+                <div class="question" id="car_question">
+                    <label>What is your approximate
+                        <select id="car_ratio">
+                            <option value="1">yearly</option>
+                            <option value="12">monthly</option>
+                            <option value="365">daily</option>
+                        </select>
+                         mileage on your car? (if you do not drive, enter 0)</label>
+                        <input type="number" id="car_bill" class="input">
+                </div>
+                <div class="question" id="short_plane_question">
+                    <label>How many flights of length 4 hours or less have you taken in the past year?</label>
+                    <input type="number" id="short_plane_flights" class="input">
+                </div>
+                <div class="question" id="long_plane_question">
+                    <label>How many flights of length 4 hours or more have you taken in the past year?</label>
+                    <input type="number" id="long_plane_flights" class="input">
+                </div>
+                <div class="question" id="recycle_news_question">
+                    <label>Do you recycle newspaper?</label>
+                    <select id="newspaper">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                    </select>
+                </div>
+                <div class="question" id="recycle_metal_question">
+                    <label>Do you recycle aluminum and tin?</label>
+                    <select id="metal">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                    </select>
+                </div>
+            </form>
+            <div>
+                <button id="submit_quiz">Submit Quiz</button>
+            </div>
+        </div>
+        <div id="after_quiz">
+            <h1>Your Statistics:</h1>
+            <p id="main_stat">In total, you emit [blank] metric tonnes of CO2 per year</p>
+            <p id="most_stat">Most of your carbon emissions come from [blank]</p>
+            <p id="tips"></p>
+            <button id="retake">Retake Quiz</button>
+            <button id="blog_btn">Check out our blog for more tips to decrease your carbon footprint!</button>
+        </div>
+        <div id="div7">
+            <p id="reminder_title">Here are your daily reminders</p>
+        </div>
+        <div id="reminders_box">
+            <div class="reminder">
+                <p id="personalized_reminder_1">Swap some of your old lightbulbs with LED ones</p>
+                <div class="reminder_buttons">
+                    <button id="complete1" class="reminder_button_complete">Complete</button>
+                    <button id="abandon1" class="reminder_button_abandon">Abandon</button>
+                </div>
+            </div>
+            <div class="reminder">
+                <p id="personalized_reminder_2">Consider installing solar panels</p>
+                <div class="reminder_buttons">
+                    <button id="complete2" class="reminder_button_complete">Complete</button>
+                    <button id="abandon2" class="reminder_button_abandon">Abandon</button>
+                </div>
+            </div>
+            <div class="reminder">
+                <p id="personalized_reminder_3">Take shorter and colder showers</p>
+                <div class="reminder_buttons">
+                    <button id="complete3" class="reminder_button_complete">Complete</button>
+                    <button id="abandon3" class="reminder_button_abandon">Abandon</button>
+                </div>
+            </div>
+
+
+        </div>
+        <div id="filler">
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+            <p>Hello</p>
+        </div>
+
+    </div>
+</body>
+</html>
